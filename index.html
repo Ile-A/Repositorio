@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Demo - Creating a Floating Navigation Menu</title>
+  
+  <!-- Include jQuery -->
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  
+  <style type='text/css'>
+
+    body {
+	color:#394050;
+ font-size:24px;
+ font-family:"Trebuchet MS";
+ text-shadow: 0px -1px 1px rgba(255,255,255,255);
+	background-image: url(tausta6.jpg);
+	background-repeat: repeat;
+}
+#wrap {
+	margin: 10px auto;
+	padding: 0px;
+	width: auto;
+	font-family: Arial, sans-serif;
+	text-align: left;
+}
+#header {
+   background-color: #990;
+   color: #FFF;
+}
+#logo {
+   font-size: 0px;  
+   line-height: 0px;    
+   padding: 0px;
+}
+#navWrap {
+   height: 0px;
+}
+#nav {
+   padding: 0px;
+   background: #rgba(0, 0, 255, 0.3);    
+}
+#nav ul {
+   margin: 0;
+   padding: 0;    
+}
+#nav li {
+   float: left;
+   padding: 0px 0px;
+   background-color: #rgba(0, 0, 255, 0.9);
+   margin: 0 0px 0 0;
+   color: #F00;
+   list-style-type: none;
+}
+#nav li a {
+   color: #F00;  
+   text-decoration: none;    
+}
+#nav li a:hover {
+   text-decoration: underline;   
+}
+br.clearLeft {
+   clear: left;        
+}​
+
+  </style>
+  
+
+
+<script type='text/javascript'>
+//<![CDATA[ 
+
+  $(function() {
+    // Stick the #nav to the top of the window
+    var nav = $('#nav');
+    var navHomeY = nav.offset().top;
+    var isFixed = false;
+    var $w = $(window);
+    $w.scroll(function() {
+        var scrollTop = $w.scrollTop();
+        var shouldBeFixed = scrollTop > navHomeY;
+        if (shouldBeFixed && !isFixed) {
+            nav.css({
+                position: 'fixed',
+                top: 0,
+                left: nav.offset().left,
+                width: nav.width()
+            });
+            isFixed = true;
+        }
+        else if (!shouldBeFixed && isFixed)
+        {
+            nav.css({
+                position: 'static'
+            });
+            isFixed = false;
+        }
+    });
+});
+
+//]]>  
+</script>
+
+
+</head>
+<body>
+
+<div id="wrap">
+    
+    <!-- The header code, including the menu -->
+    <div id="header">
+        <div id="logo">Start Slowly Scrolling Down<br /> This Page!</div>
+        <div id="navWrap">
+            <div id="nav">
+                <ul>
+                    <li><a href="http://www.saunalahti.fi/~ilkkande/turnjs4/samples/magazine/slider.html#page/2" class="smoothScroll"><img src="tausta1/tausta1_01.jpg" width="127" height="127" alt=""/></a></li>
+                    <li><a href="http://www.saunalahti.fi/~ilkkande/turnjs4/samples/magazine/slider.html#page/4" class="smoothScroll"><img src="tausta1/tausta1_02.jpg" width="131" height="127" alt=""/></a></li>
+                    <li><a href="http://www.saunalahti.fi/~ilkkande/turnjs4/samples/magazine/slider.html#page/6" class="smoothScroll"><img src="tausta1/tausta1_03.jpg" width="126" height="127" alt=""/></a></li>
+                    <li><a href="http://www.saunalahti.fi/~ilkkande/turnjs4/samples/magazine/slider.html#page/8" class="smoothScroll"><img src="tausta1/tausta1_04.jpg" width="131" height="127" alt=""/></a></li>
+                    <li><a href="http://www.saunalahti.fi/~ilkkande/turnjs4/samples/magazine/slider.html#page/10" class="smoothScroll"><img src="tausta1/tausta1_05.jpg" width="125" height="127" alt=""/></a></li>
+                    <li><a href="http://www.saunalahti.fi/~ilkkande/turnjs4/samples/magazine/slider.html#page/12" class="smoothScroll"><img src="tausta1/tausta1_06.jpg" width="130" height="127" alt=""/></a></li>
+                    <li><a href="http://www.saunalahti.fi/~ilkkande/turnjs4/samples/magazine/slider.html#page/14" class="smoothScroll"><img src="tausta1/tausta1_07.jpg" width="126" height="127" alt=""/></a></li>
+                    <li></li>
+                </ul>    
+                <br class="clearLeft" />
+          </div>
+        </div>
+    </div>
+    
+    <!-- The main page content (just filler for this demo) -->
+    <h1>&nbsp;</h1>
+    <p>&nbsp;</p>
+    <h1 style="font-family: Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', monospace; font-size: 36px; font-style: normal; font-weight: bolder;">Military Strength Comparisons    </h1>
+    <table width="802" height="893" border="2">
+      <tbody>
+        <tr>
+          <td width="280" height="175" align="center" valign="middle" style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif"><span style="font-family: Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', monospace; font-size: 24px; text-align: center;"> <strong>Land Forces</strong></span></td>
+          <td width="250"><img src="icons/gothnia1.png" alt="" width="250" height="169" align="absmiddle"/></td>
+          <td width="248"><img src="icons/osman1.png" alt="" width="253" height="171" align="absmiddle"/></td>
+        </tr>
+        <tr>
+          <td height="140" align="center" valign="middle" style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif"><img src="icons/personnel.jpg" alt="" width="280" height="140" align="absmiddle"/></td>
+          <td style="text-align: center">980</td>
+          <td style="text-align: center">456</td>
+        </tr>
+        <tr>
+          <td height="140" align="center" valign="middle" style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif"><img src="icons/afv.jpg" alt="" width="280" height="140" align="absmiddle"/></td>
+          <td style="text-align: center">655</td>
+          <td style="text-align: center">353</td>
+        </tr>
+        <tr>
+          <td height="140" align="center" valign="middle" style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif"><img src="icons/arty.jpg" alt="" width="280" height="140" align="absmiddle"/></td>
+          <td style="text-align: center">345</td>
+          <td style="text-align: center">345</td>
+        </tr>
+        <tr>
+          <td height="140" align="center" valign="middle" style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif"><img src="icons/armyair.jpg" alt="" width="280" height="140" align="absmiddle"/></td>
+          <td style="text-align: center">866</td>
+          <td style="text-align: center">456</td>
+        </tr>
+        <tr>
+          <td height="140" align="center" valign="middle" style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif"><img src="icons/cars.jpg" alt="" width="280" height="140" align="absmiddle"/></td>
+          <td style="text-align: center">765</td>
+          <td style="text-align: center">5454</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+</div>
+</body>
+</html>
